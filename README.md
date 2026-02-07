@@ -197,6 +197,27 @@ Verify write and read operations using a testbench and waveforms.
     end
     endmodule
 
+## HOW TO RUN THE CODE
+Open Vivado / ModelSim software.
+
+Create a new project.
+
+Add the AXI4-Lite slave Verilog file to the project.
+
+Add the testbench file to the project.
+
+Set the testbench as top module.
+
+Compile all the Verilog files.
+
+Run the simulation.
+
+Open the waveform window.
+
+Check write and read signals in the waveform.
+
+Verify that read data matches written data.
+
 ## RTL DIAGRAM
 
 <img width="1366" height="768" alt="Screenshot (127)" src="https://github.com/user-attachments/assets/6c1b6622-008e-4bc0-a35e-da12ac941bff" />

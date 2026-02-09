@@ -55,12 +55,6 @@ Check write and read signals in the waveform.
 
 Verify that read data matches written data.
 
-## RTL DIAGRAM
-<img width="1366" height="768" alt="Screenshot (127)" src="https://github.com/user-attachments/assets/7500c083-0052-4ec5-ad31-7eefd9dc8ba5" />
-
-## WAVEFORM
-<img width="1366" height="768" alt="Screenshot (126)" src="https://github.com/user-attachments/assets/b82b5195-808c-454b-911a-ae947bc88147" />
-
 ## CONCLUSION
 In this project, an AXI4-Lite slave interface was successfully designed and verified using Verilog HDL. The design correctly supports read and write operations through a memory-mapped register interface by 
 following the AXI4-Lite handshaking protocol. Simulation results confirm that data written by the master is accurately stored and read back from the slave registers. This project helped in understanding AXI4-Lite protocol basics, 

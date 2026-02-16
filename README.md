@@ -1,114 +1,61 @@
-# AXI_LITE_SLAVE
-## AIM:To design and implement an AMBA AXI4-Lite Slave Interface using Verilog HDL and verify its read and write operations through simulation.
+# AXI4_LITE_SLAVE
+## AIM:
+To design and verify an AXI4-Lite Slave Interface using Verilog HDL, implementing a memory-mapped register set that supports single-beat read and write transactions as per the ARM AMBA AXI4-Lite.
 
-## APPARATUS
-Software:
-
-Vivado / ModelSim / QuestaSim
+## APPARATUS:
+Computer or Laptop
 
 Verilog HDL
 
-GTKWave (for waveform analysis)
+AXI4-Lite Protocol
 
-Hardware (Optional):
+Vivado / ModelSim Simulator
 
-FPGA Board (Basys-3 / Artix-7)
-
-USB Cable
-
-PC/Laptop
+Waveform Viewer
 
 ## PROCEDURE
-Step 1:
+Study the basic AXI4-Lite read and write signals.
 
-Study the AMBA AXI4-Lite protocol and understand its five channels.
+Define clock, reset, and AXI4-Lite interface signals in Verilog.
 
-Step 2:
+Create internal registers for data storage.
 
-Define all AXI4-Lite slave interface signals:
+Capture write address when AWVALID and AWREADY are high.
 
-Write Address Channel (AW)
+Store write data into the selected register.
 
-Write Data Channel (W)
+Generate write response after successful write.
 
-Write Response Channel (B)
+Capture read address when ARVALID and ARREADY are high.
 
-Read Address Channel (AR)
+Read data from the selected register.
 
-Read Data Channel (R)
+Send read data and response to the master.
 
-Step 3:
+Verify write and read operations using a testbench and waveforms.
 
-Create internal registers (for example, 4 or 8 registers) to store data.
+## HOW TO RUN THE CODE
+Open Vivado / ModelSim software.
 
-Step 4:
+Create a new project.
 
-Implement Write Address logic:
-Capture the address when AWVALID and AWREADY are high.
+Add the AXI4-Lite slave Verilog file to the project.
 
-Step 5:
+Add the testbench file to the project.
 
-Implement Write Data logic:
-Store incoming data into the selected register.
+Set the testbench as top module.
 
-Step 6:
+Compile all the Verilog files.
 
-Generate Write Response:
-Send BRESP and BVALID after successful write.
+Run the simulation.
 
-Step 7:
+Open the waveform window.
 
-Implement Read Address logic:
-Capture address when ARVALID and ARREADY are high.
-
-Step 8:
-
-Send Read Data:
-Provide stored data through RDATA and assert RVALID.
-
-Step 9:
-
-Design a testbench:
-Generate write and read transactions to verify functionality.
-
-Step 10:
-
-Run simulation and verify:
-
-Correct handshake operation
-
-Correct data transfer
-
-Proper response signals
-
-## HOW TO DO THE PROJECT 
-Create a new RTL project in Vivado/ModelSim.
-
-Write the AXI4-Lite slave Verilog module.
-
-Define parameters like data width and address width.
-
-Create internal register memory.
-
-Implement write channel logic with handshake mechanism.
-
-Implement read channel logic.
-
-Handle reset condition properly.
-
-Write testbench for:
-
-Writing data to slave
-
-Reading data from slave
-
-Simulate and observe waveforms.
+Check write and read signals in the waveform.
 
 Verify that read data matches written data.
 
-Debug if handshake timing is incorrect.
-
 ## CONCLUSION
-The AMBA AXI4-Lite Slave Interface was successfully designed and verified using Verilog HDL. The implemented design correctly supports single read and write transactions using the VALID and READY handshake mechanism defined by the AXI4-Lite protocol.
-
-Through simulation, the slave module accurately stored write data into internal registers and returned correct data during read operations. The write response and read response signals were properly generated, ensuring correct communication between master and slave.
+In this project, an AXI4-Lite slave interface was successfully designed and verified using Verilog HDL. The design correctly supports read and write operations through a memory-mapped register interface by 
+following the AXI4-Lite handshaking protocol. Simulation results confirm that data written by the master is accurately stored and read back from the slave registers. This project helped in understanding AXI4-Lite protocol basics, 
+RTL design, and verification using testbenches, which are essential skills for SoC and VLSI design.
